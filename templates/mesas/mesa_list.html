@@ -1,0 +1,31 @@
+{% extends 'main/base_user.html' %}
+
+{% block content %}
+<h1>Lista de Mesas</h1>
+
+<a href="{% url 'ordenes:mesas_create' %}" class="btn btn-primary mb-3">Agregar Mesa</a>
+<a href="{% url 'ordenes:estado_list' %}" class="btn btn-primary mb-3">Mesa estado</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Capacidad</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mesa in mesas %}
+        <tr>
+            <td><a class="btn btn-primary" href="{% url 'ordenes:mesas_update' mesa.pk %}">Editar</a></td>
+            <td><a class="btn btn-danger" href="{% url 'ordenes:mesas_delete' mesa.pk %}">Eliminar</a></td>
+            <td>{{mesa.nombre}}</td>
+            <td>{{mesa.capacidad}}</td>
+            <td>{{mesa.estado}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

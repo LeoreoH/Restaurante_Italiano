@@ -1,0 +1,177 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-danger" href="#">Trattoria Italiana</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+                <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="inicio" class="hero-section mt-5 pt-5">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1 class="display-4 fw-bold">Benvenuti alla Trattoria Italiana</h1>
+                <p class="lead">Un rincón de Italia en cada plato: pasta fresca, pizza artesanal y postres tradicionales.</p>
+                <a href="#reservaciones" class="btn btn-danger btn-lg mt-3">Reserva tu Mesa</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="nosotros" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Nuestra Historia</h2>
+                <p>Desde 1990, la Trattoria Italiana ha compartido con la ciudad los auténticos sabores de Italia. Nuestro fundador, el chef Giovanni Rossi, trajo sus recetas familiares de Nápoles para crear un lugar donde cada bocado te transporte a la Toscana.</p>
+                <p>Hoy seguimos esa tradición, elaborando cada plato con ingredientes frescos, aceite de oliva virgen y pasión italiana.</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Horario de Atención</h2>
+                <ul class="list-unstyled">
+                    <li><strong>Lunes a Jueves:</strong> 12:00 pm - 10:00 pm</li>
+                    <li><strong>Viernes y Sábado:</strong> 12:00 pm - 11:30 pm</li>
+                    <li><strong>Domingo:</strong> 1:00 pm - 9:00 pm</li>
+                </ul>
+                <p class="mt-3">Visítanos en Via Roma #45, Ciudad Gourmet</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Nuestro Menú Destacado</h2>
+        
+        <div class="row menu-category">
+            <div class="col-md-12">
+                <h3>Platos Principales</h3>
+            </div>
+            <div class="col-md-4">
+                <h5>Pizza Margherita</h5>
+                <p>Masa artesanal, salsa de tomate napolitana, mozzarella fresca y hojas de albahaca.</p>
+                <p class="text-danger fw-bold">$11.99</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Pasta Carbonara</h5>
+                <p>Espaguetis al dente con pancetta, huevo, queso pecorino romano y pimienta negra.</p>
+                <p class="text-danger fw-bold">$13.99</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Risotto ai Funghi</h5>
+                <p>Arroz arborio cremoso cocinado con setas frescas, vino blanco y parmesano rallado.</p>
+                <p class="text-danger fw-bold">$15.99</p>
+            </div>
+        </div>
+        
+        <div class="row menu-category">
+            <div class="col-md-12">
+                <h3>Postres</h3>
+            </div>
+            <div class="col-md-4">
+                <h5>Tiramisù</h5>
+                <p>Bizcocho empapado en café espresso, mascarpone y cacao espolvoreado.</p>
+                <p class="text-danger fw-bold">$6.99</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Panna Cotta</h5>
+                <p>Delicada crema italiana servida con coulis de frutos rojos.</p>
+                <p class="text-danger fw-bold">$5.99</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Cannoli Siciliani</h5>
+                <p>Masa crujiente rellena de ricotta dulce y decorada con pistachos.</p>
+                <p class="text-danger fw-bold">$7.50</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonios" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Lo que Dicen Nuestros Clientes</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <p>"La mejor pizza que he probado fuera de Italia. El ambiente es acogedor y auténtico."</p>
+                <p class="text-end"><strong>- Valentina R.</strong></p>
+            </div>
+            <div class="col-md-4">
+                <p>"El tiramisù es celestial, y la pasta carbonara me recuerda a Roma."</p>
+                <p class="text-end"><strong>- Marco B.</strong></p>
+            </div>
+            <div class="col-md-4">
+                <p>"La Trattoria Italiana es mi lugar favorito para cenas románticas. ¡Un pedacito de Italia aquí mismo!"</p>
+                <p class="text-end"><strong>- Sofía L.</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contacto" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Reserva tu Mesa</h2>
+                <p>Vive una experiencia italiana única. Reserva con anticipación para tus celebraciones o cenas especiales.</p>
+                <p><strong>Teléfono:</strong> (321) 654-9870</p>
+                <p><strong>Email:</strong> reservas@trattoriaitaliana.com</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Newsletter</h2>
+                <p>Suscríbete y recibe recetas italianas y promociones especiales.</p>
+                <form>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Tu correo electrónico">
+                    </div>
+                    <button type="submit" class="btn btn-danger">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Trattoria Italiana</h5>
+                <p>Un pedazo de Italia en tu mesa.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Enlaces Rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#inicio" class="text-white">Inicio</a></li>
+                    <li><a href="#menu" class="text-white">Menú</a></li>
+                    <li><a href="#nosotros" class="text-white">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Síguenos</h5>
+                <p>Facebook | Instagram | Twitter</p>
+                <p>© 2023 Trattoria Italiana. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

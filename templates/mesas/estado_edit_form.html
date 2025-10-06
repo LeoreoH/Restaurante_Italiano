@@ -1,0 +1,10 @@
+{% extends 'main/base_user.html' %}
+
+{% block content %}
+<h1>Editar estado</h1>
+<form action="{% url 'ordenes:estado_update' form.instance.pk %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

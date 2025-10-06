@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<style>
+    body {
+        background-color: #f8f9fa;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+            url("https://images.unsplash.com/photo-1600891965056-8b53f6f7a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80");
+        background-size: cover;
+        background-position: center;
+    }
+    .login-container {
+        max-width: 420px;
+        width: 100%;
+        padding: 20px;
+    }
+    .login-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+    .login-header {
+        background: linear-gradient(90deg, #008C45, #F4F5F0, #CD212A); /* colores bandera italiana */
+        color: #333;
+        text-align: center;
+        padding: 20px;
+    }
+    .login-header h3 {
+        font-family: "Georgia", serif;
+        font-weight: bold;
+        color: #2c2c2c;
+    }
+    .login-body {
+        padding: 30px;
+        background-color: white;
+    }
+    .form-control:focus {
+        border-color: #CD212A;
+        box-shadow: 0 0 0 0.25rem rgba(205, 33, 42, 0.25);
+    }
+    .btn-login {
+        background-color: #CD212A;
+        border: none;
+        color: white;
+        padding: 10px;
+        transition: all 0.3s;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .btn-login:hover {
+        background-color: #a71b25;
+        transform: translateY(-2px);
+    }
+    .login-footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+    }
+    .link-primary {
+        color: #008C45;
+        text-decoration: none;
+    }
+    .link-primary:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <h3><i class="bi bi-egg-fried me-2"></i>Ristorante Italiano</h3>
+            <p class="mb-0">Accedi al tuo account</p>
+        </div>
+        
+        <div class="login-body">
+            <form action="{% url 'accounts:login' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-login btn-lg">Entrar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="login-footer">
+            <p class="mb-0">Non hai un account? <a href="#" class="link-primary">Registrati</a></p>
+        </div>
+    </div>
+    
+    <div class="text-center mt-3">
+        <p class="text-muted">&copy; 2023 Ristorante Italiano. Tutti i diritti riservati.</p>
+    </div>
+</div>
+{% endblock %}
