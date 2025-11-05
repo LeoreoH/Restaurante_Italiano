@@ -117,11 +117,12 @@
             <i class="bi bi-pizza"></i> Trattoria Italiana
         </div>
         <ul class="list-unstyled">
-            <li><a href="#" class="active"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
-            <li><a href="#"><i class="bi bi-cart"></i> Órdenes</a></li>
+            <li><a href="{% url 'index_user' %}"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+            <li><a href="{% url 'ordenes:ordenes_list' %}"><i class="bi bi-cart"></i> Órdenes</a></li>
             <li><a href="{% url 'platillos:platillos_list' %}"><i class="bi bi-egg-fried"></i> Menú</a></li>
             <li><a href="#"><i class="bi bi-people"></i> Clientes</a></li>
             <li><a href="#"><i class="bi bi-bar-chart"></i> Reportes</a></li>
+            <li><a href="{% url 'ordenes:pagos_list' %}"><i class="bi bi-credit-card"></i> Pagos</a></li>
             <li><a href="{% url 'accounts:user_list' %}"><i class="bi bi-people-fill"></i> Usuarios</a></li>
             <li><a href="{% url 'platillos:categoria_list' %}"><i class="bi bi-gear"></i> Categorías</a></li>
             <li><a href="{% url 'ordenes:mesa_list' %}"><i class="bi bi-gear"></i> Mesas</a></li>
